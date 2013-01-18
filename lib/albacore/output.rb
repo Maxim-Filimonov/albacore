@@ -33,7 +33,7 @@ class OutputBuilder
   
   def self.output_to(dir_to, dir_from, remove_dir_to)
     FileUtils.rmtree dir_to if remove_dir_to
-    FileUtils.mkdir dir_to unless Dir.exists? dir_to
+    FileUtils.mkdir_p dir_to unless Dir.exists? dir_to
     yield OutputBuilder.new(dir_to, dir_from)
   end
   
