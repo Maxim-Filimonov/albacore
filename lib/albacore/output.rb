@@ -34,7 +34,7 @@ class OutputBuilder
   
   def self.output_to(dir_to, dir_from)
     rmtree dir_to
-    mkdir dir_to
+    mkdir_p dir_to
     yield OutputBuilder.new(dir_to, dir_from)
   end
   
